@@ -71,6 +71,32 @@ footer{color:var(--muted);font-size:.84rem;padding:28px 4px 0}
 .credit .built{font-weight:750;font-size:.95rem}
 .credit .thanks{margin-top:6px;color:var(--muted)}
 .credit .handle{color:var(--accent);font-weight:700}
+
+.tracker{margin:26px 0 8px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:16px;box-shadow:var(--shadow)}
+.tracker h2{margin:0 0 6px;font-size:1.35rem}.tracker .muted{color:var(--muted);font-size:.9rem;margin:0 0 14px}
+.tracker label{display:block;font-weight:700;font-size:.9rem;margin:12px 0 6px}
+.tracker select{width:100%;font:inherit;padding:12px;border:1px solid var(--line);border-radius:12px;background:#fff;color:var(--ink)}
+.faces{display:grid;grid-template-columns:repeat(5,1fr);gap:7px}.face input{position:absolute;opacity:0}
+.face span{display:flex;align-items:center;justify-content:center;min-height:52px;border:1px solid var(--line);border-radius:13px;background:#fafafa;font-size:1.7rem}
+.face input:checked + span{outline:3px solid var(--accent);background:var(--accent2)}
+.track-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}.track-btn{border:0;border-radius:12px;padding:11px 14px;font:inherit;font-weight:750;background:var(--accent);color:#fff}
+.track-btn.secondary{background:#eef2f1;color:var(--ink);border:1px solid var(--line)}.track-status{font-size:.9rem;color:var(--accent);font-weight:700;min-height:1.3em;margin-top:9px}
+.calendar{margin-top:18px}.cal-head{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px}.cal-head button{border:1px solid var(--line);background:#fff;border-radius:10px;padding:8px 11px;font-size:1rem}
+.cal-title{font-weight:800}.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}.cal-dow{text-align:center;font-size:.72rem;color:var(--muted);font-weight:750;padding:4px 0}
+.cal-day{min-height:53px;border:1px solid var(--line);background:#fff;border-radius:10px;padding:5px;position:relative;font-size:.82rem;text-align:left}.cal-day.empty{border:0;background:transparent}.cal-day.has{background:#f3f7f6}
+.cal-day .count{position:absolute;right:5px;bottom:4px;min-width:20px;height:20px;padding:0 5px;border-radius:10px;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:800}
+.day-detail{margin-top:12px;border-top:1px solid var(--line);padding-top:10px}.entry{padding:10px 0;border-bottom:1px solid #edf0ed}.entry:last-child{border-bottom:0}
+.entry-top{display:flex;justify-content:space-between;gap:8px;font-weight:750}.entry-change{font-size:1.25rem;margin-top:4px}
+.privacy-note{margin-top:12px;padding:10px 12px;border-radius:11px;background:#f5f1ea;color:var(--muted);font-size:.82rem}
+
+
+.situation-wrap{margin-top:12px}
+.quick-situations{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 10px}
+.sit-chip{border:1px solid var(--line);background:#f8faf9;color:var(--ink);border-radius:999px;padding:9px 12px;font:inherit;font-size:.9rem;cursor:pointer}
+.sit-chip.selected{background:var(--accent2);border-color:var(--accent);outline:2px solid color-mix(in srgb,var(--accent) 35%, white)}
+.tracker textarea{width:100%;min-height:78px;resize:vertical;font:inherit;padding:12px;border:1px solid var(--line);border-radius:12px;background:#fff;color:var(--ink)}
+.entry-situation{margin-top:4px;color:var(--muted);font-size:.9rem}
+
 </style>
 
 <link rel="manifest" href="./manifest.webmanifest">
@@ -291,6 +317,42 @@ footer{color:var(--muted);font-size:.84rem;padding:28px 4px 0}
 
 </div></details>
 
+
+<section class="tracker" id="skills-tracker">
+<div class="tag">Personal tracker</div><h2>Skills Tracker</h2>
+<p class="muted">Record what was happening, which skill you used, and how you felt immediately before and after.</p>
+<label for="skillSelect">Skill used</label>
+<select id="skillSelect"><option value="">Choose a skill…</option>
+<option>STOP</option><option>TIP / TIPP</option><option>Wise Mind</option><option>Check the Facts</option>
+<option>Pros & Cons</option><option>Opposite Action</option><option>DEAR MAN</option><option>GIVE</option><option>FAST</option>
+<option>ACCEPTS</option><option>IMPROVE</option><option>Self-Soothe</option><option>Radical Acceptance</option><option>Turning the Mind</option>
+<option>ABC PLEASE</option><option>WHAT skills</option><option>HOW skills</option><option>Problem Solving</option></select>
+<div class="situation-wrap">
+  <label>What was happening?</label>
+  <div class="quick-situations" id="quickSituations"></div>
+  <textarea id="situationText" placeholder="Or write a brief note in your own words…"></textarea>
+</div>
+<label>Before</label><div class="faces">
+<label class="face"><input type="radio" name="beforeMood" value="1"><span>😢</span></label>
+<label class="face"><input type="radio" name="beforeMood" value="2"><span>🙁</span></label>
+<label class="face"><input type="radio" name="beforeMood" value="3"><span>😐</span></label>
+<label class="face"><input type="radio" name="beforeMood" value="4"><span>🙂</span></label>
+<label class="face"><input type="radio" name="beforeMood" value="5"><span>😊</span></label></div>
+<label>After</label><div class="faces">
+<label class="face"><input type="radio" name="afterMood" value="1"><span>😢</span></label>
+<label class="face"><input type="radio" name="afterMood" value="2"><span>🙁</span></label>
+<label class="face"><input type="radio" name="afterMood" value="3"><span>😐</span></label>
+<label class="face"><input type="radio" name="afterMood" value="4"><span>🙂</span></label>
+<label class="face"><input type="radio" name="afterMood" value="5"><span>😊</span></label></div>
+<div class="track-actions"><button class="track-btn" id="saveEntry" type="button">Save entry</button>
+<button class="track-btn secondary" id="exportEntries" type="button">Export backup</button>
+<label class="track-btn secondary" style="cursor:pointer">Import backup<input id="importEntries" type="file" accept="application/json" style="display:none"></label></div>
+<div class="track-status" id="trackStatus"></div>
+<div class="calendar"><div class="cal-head"><button id="prevMonth" type="button">‹</button><div class="cal-title" id="calTitle"></div><button id="nextMonth" type="button">›</button></div>
+<div class="cal-grid" id="calendarGrid"></div><div class="day-detail" id="dayDetail"></div></div>
+<div class="privacy-note">Tracking data stays in this browser on this device. It does not go to a server or sync between devices. Clearing website data or deleting the app may remove it, so export a backup if you want to keep it.</div>
+</section>
+
 <footer>
 <p>This pocket guide is intended as a concise reminder of commonly taught DBT skills. It is not a substitute for DBT skills training, therapy or individual clinical advice. Terminology and the way some acronyms are taught vary slightly between programmes.</p>
 
@@ -309,5 +371,101 @@ if ("serviceWorker" in navigator) {
 }
 </script>
 
+
+<script>
+(function(){
+const KEY="erg_skill_tracker_v2", faces=["","😢","🙁","😐","🙂","😊"];
+let viewDate=new Date(); viewDate=new Date(viewDate.getFullYear(),viewDate.getMonth(),1);
+let quickChoice="";
+
+const $=id=>document.getElementById(id);
+const entries=()=>{try{return JSON.parse(localStorage.getItem(KEY)||localStorage.getItem("erg_skill_tracker_v1")||"[]")}catch(e){return[]}};
+const put=a=>localStorage.setItem(KEY,JSON.stringify(a));
+const chosen=n=>{const x=document.querySelector('input[name="'+n+'"]:checked');return x?Number(x.value):null};
+
+const common={
+ "STOP":["angry words","angry email/message","urge to self-harm","urge to hit someone","about to walk out"],
+ "TIP / TIPP":["panic or overwhelm","very intense anger","urge to self-harm","urge to hit someone","unable to think clearly"],
+ "Wise Mind":["important decision","conflict at work","relationship decision","whether to send a message","feeling torn"],
+ "Check the Facts":["felt betrayed","assumed bad intent","fear something will happen","felt rejected","angry about what someone did"],
+ "Pros & Cons":["send an angry email","confront someone now","urge to self-harm","urge to hit someone","quit or walk out"],
+ "Opposite Action":["anger","fear or avoidance","shame","sadness and withdrawal","urge to retaliate"],
+ "DEAR MAN":["ask for something","say no","set a boundary","address bad behaviour","raise a work problem"],
+ "GIVE":["difficult work conversation","argument with partner/family","repair after conflict","someone feels criticised","need to keep things civil"],
+ "FAST":["felt pressured to agree","wanted to apologise unnecessarily","values challenged","felt disrespected","needed to hold a boundary"],
+ "ACCEPTS":["waiting for bad news","stuck in conflict","urge to act impulsively","ruminating","cannot fix it right now"],
+ "IMPROVE":["overwhelmed","distressed at night","stuck waiting","feeling hopeless","need to get through the next hour"],
+ "Self-Soothe":["after an argument","after a nightmare","feeling lonely","physically tense","trying not to act on an urge"],
+ "Radical Acceptance":["something unfair happened","relationship loss","work decision I cannot change","health or life setback","past event I keep fighting"],
+ "Turning the Mind":["caught ruminating again","wanting reality to be different","replaying an argument","stuck on unfairness","returning to an old grievance"],
+ "ABC PLEASE":["poor sleep","stressed week","not eating regularly","too little exercise","emotionally run down"],
+ "WHAT skills":["mind racing","ruminating","judging myself","caught in an argument","unable to focus"],
+ "HOW skills":["judging someone","trying to prove I am right","multitasking under stress","stuck in thoughts","reacting automatically"],
+ "Problem Solving":["work problem","relationship problem","practical obstacle","decision with several options","recurring trigger"]
+};
+
+function renderSituations(){
+  const skill=$("skillSelect").value;
+  const box=$("quickSituations");
+  box.innerHTML="";
+  quickChoice="";
+  $("situationText").value="";
+  (common[skill]||["angry words","angry email/message","urge to self-harm","urge to hit someone","feeling overwhelmed"]).forEach(txt=>{
+    const b=document.createElement("button");
+    b.type="button"; b.className="sit-chip"; b.textContent=txt;
+    b.onclick=()=>{
+      document.querySelectorAll(".sit-chip").forEach(x=>x.classList.remove("selected"));
+      b.classList.add("selected");
+      quickChoice=txt;
+      $("situationText").value=txt;
+    };
+    box.appendChild(b);
+  });
+}
+$("skillSelect").addEventListener("change",renderSituations);
+
+$("saveEntry").onclick=()=>{
+  const skill=$("skillSelect").value,b=chosen("beforeMood"),a=chosen("afterMood");
+  const situation=$("situationText").value.trim();
+  if(!skill||!b||!a){$("trackStatus").textContent="Choose a skill and both faces.";return}
+  if(!situation){$("trackStatus").textContent="Add what was happening, either by tapping an example or writing a short note.";return}
+  const n=new Date(),e={id:Date.now(),skill,situation,before:b,after:a,iso:n.toISOString(),
+  localDate:n.getFullYear()+"-"+String(n.getMonth()+1).padStart(2,"0")+"-"+String(n.getDate()).padStart(2,"0"),
+  localTime:String(n.getHours()).padStart(2,"0")+":"+String(n.getMinutes()).padStart(2,"0")};
+  const x=entries();x.push(e);put(x);$("trackStatus").textContent="Saved.";
+  $("skillSelect").value="";$("situationText").value="";$("quickSituations").innerHTML="";
+  document.querySelectorAll('input[name="beforeMood"],input[name="afterMood"]').forEach(i=>i.checked=false);
+  viewDate=new Date(n.getFullYear(),n.getMonth(),1);render()
+};
+
+$("exportEntries").onclick=()=>{const blob=new Blob([JSON.stringify(entries(),null,2)],{type:"application/json"}),u=URL.createObjectURL(blob),a=document.createElement("a");a.href=u;a.download="emotional-regulation-skills-backup.json";a.click();setTimeout(()=>URL.revokeObjectURL(u),500)};
+$("importEntries").onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const d=JSON.parse(r.result);if(!Array.isArray(d))throw 0;put(d);$("trackStatus").textContent="Backup imported.";render()}catch(x){$("trackStatus").textContent="Could not read that backup."}};r.readAsText(f)};
+$("prevMonth").onclick=()=>{viewDate=new Date(viewDate.getFullYear(),viewDate.getMonth()-1,1);render()};
+$("nextMonth").onclick=()=>{viewDate=new Date(viewDate.getFullYear(),viewDate.getMonth()+1,1);render()};
+
+function safe(s){return String(s||"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]))}
+function show(key){
+ const a=entries().filter(e=>e.localDate===key).sort((x,y)=>(x.iso||"").localeCompare(y.iso||""));
+ if(!a.length){$("dayDetail").innerHTML="";return}
+ const d=new Date(key+"T12:00:00");
+ $("dayDetail").innerHTML="<strong>"+d.toLocaleDateString(undefined,{weekday:"long",day:"numeric",month:"long"})+"</strong>"+
+ a.map(e=>'<div class="entry"><div class="entry-top"><span>'+safe(e.skill)+'</span><span>'+safe(e.localTime||"")+'</span></div>'+
+ (e.situation?'<div class="entry-situation">'+safe(e.situation)+'</div>':"")+
+ '<div class="entry-change">'+faces[e.before]+' → '+faces[e.after]+"</div></div>").join("")
+}
+function render(){
+ const y=viewDate.getFullYear(),m=viewDate.getMonth(),g=$("calendarGrid");
+ $("calTitle").textContent=viewDate.toLocaleDateString(undefined,{month:"long",year:"numeric"});g.innerHTML="";
+ ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"].forEach(d=>{const x=document.createElement("div");x.className="cal-dow";x.textContent=d;g.appendChild(x)});
+ const off=(new Date(y,m,1).getDay()+6)%7;for(let i=0;i<off;i++){const x=document.createElement("div");x.className="cal-day empty";g.appendChild(x)}
+ const all=entries(),days=new Date(y,m+1,0).getDate();
+ for(let d=1;d<=days;d++){const key=y+"-"+String(m+1).padStart(2,"0")+"-"+String(d).padStart(2,"0"),c=all.filter(e=>e.localDate===key).length,x=document.createElement("button");x.type="button";x.className="cal-day"+(c?" has":"");x.innerHTML="<span>"+d+"</span>"+(c?'<span class="count">'+c+"</span>":"");if(c)x.onclick=()=>show(key);g.appendChild(x)}
+ $("dayDetail").innerHTML=""
+}
+render();
+})();
+</script>
+
+<script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(()=>{}));}</script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 {
   "name": "Emotional Regulation Pocket Guide",
   "short_name": "Emotion Guide",
-  "description": "A practical pocket guide to commonly used DBT skills for emotional regulation.",
+  "description": "A practical pocket guide to DBT skills with an on-device skills tracker.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

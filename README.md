@@ -1,24 +1,15 @@
 # Emotional Regulation Pocket Guide
-
 Built by Paul Gringras @sleepprof  
 With eternal thanks to Vic Patel and Shruti Guruswamy.
 
-## Publish with GitHub Pages
+This version adds an on-device Skills Tracker: skill used, five-point before/after mood rating, monthly calendar, and JSON export/import backup.
 
-Upload the contents of this folder to the root of a public GitHub repository.
+Tracking data is stored locally in the user's browser and is not sent to a server or synced between devices.
 
-In GitHub:
-1. Open the repository.
-2. Settings → Pages.
-3. Under Build and deployment, choose Deploy from a branch.
-4. Choose `main` and `/ (root)`.
-5. Save.
+## Situation capture
 
-The site will then appear at:
-`https://YOUR-USERNAME.github.io/YOUR-REPOSITORY-NAME/`
+The Skills Tracker now includes five skill-specific quick-select situation examples plus free text. Calendar entries show the recorded situation as well as the skill and before/after rating.
 
-### iPhone
-Open the published site in Safari → Share → Add to Home Screen.
+## Pros & Cons Builder
 
-### Android
-Open the published site in Chrome → menu → Install app / Add to Home screen.
+Adds quick-select situation words and free text, builds a four-quadrant DBT Pros & Cons table locally in the browser, allows individual suggested points to be tapped/highlighted, and allows custom points to be added to any quadrant.
