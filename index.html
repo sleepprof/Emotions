@@ -97,6 +97,72 @@ footer{color:var(--muted);font-size:.84rem;padding:28px 4px 0}
 .tracker textarea{width:100%;min-height:78px;resize:vertical;font:inherit;padding:12px;border:1px solid var(--line);border-radius:12px;background:#fff;color:var(--ink)}
 .entry-situation{margin-top:4px;color:var(--muted);font-size:.9rem}
 
+
+/* Pros & Cons Builder */
+.pc-builder{margin:26px 0 8px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:16px;box-shadow:var(--shadow)}
+.pc-builder h2{margin:0 0 6px;font-size:1.35rem}
+.pc-builder .muted{color:var(--muted);font-size:.9rem;margin:0 0 14px}
+.pc-builder label{display:block;font-weight:700;font-size:.9rem;margin:12px 0 6px}
+.pc-keywords{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 10px}
+.pc-chip{border:1px solid var(--line);background:#f8faf9;color:var(--ink);border-radius:999px;padding:9px 12px;font:inherit;font-size:.9rem}
+.pc-chip.selected{background:#e8f1ef;border-color:var(--accent);outline:2px solid #bdd1cc}
+.pc-builder input[type="text"]{width:100%;font:inherit;padding:12px;border:1px solid var(--line);border-radius:12px;background:#fff;color:var(--ink)}
+.pc-actions{display:flex;gap:9px;flex-wrap:wrap;margin:12px 0}
+.pc-btn{border:0;border-radius:12px;padding:11px 14px;font:inherit;font-weight:750;background:var(--accent);color:#fff}
+.pc-btn.secondary{background:#eef2f1;color:var(--ink);border:1px solid var(--line)}
+.pc-context{font-size:.9rem;color:var(--muted);margin:8px 0 12px}
+.pc-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pc-box{border:1px solid var(--line);border-radius:15px;padding:11px;background:#fbfcfb}
+.pc-box h3{font-size:.95rem;margin:0 0 8px}
+.pc-box.act-pro{background:#eef7f0}.pc-box.act-con{background:#fff0ed}
+.pc-box.resist-pro{background:#edf4fa}.pc-box.resist-con{background:#faf3e8}
+.pc-item{display:block;width:100%;text-align:left;border:1px solid rgba(0,0,0,.08);background:rgba(255,255,255,.72);border-radius:10px;padding:9px 10px;margin:6px 0;font:inherit;font-size:.88rem;color:var(--ink)}
+.pc-item.selected{outline:3px solid var(--accent);background:#fff;font-weight:700}
+.pc-custom{display:flex;gap:6px;margin-top:8px}
+.pc-custom input{min-width:0;flex:1;padding:9px!important}
+.pc-custom button{border:1px solid var(--line);background:#fff;border-radius:10px;padding:8px 10px;font-weight:800}
+.pc-summary{margin-top:13px;padding:12px;border-radius:12px;background:#f2f5f4;display:none}
+.pc-summary strong{display:block;margin-bottom:6px}
+@media(max-width:560px){.pc-grid{grid-template-columns:1fr}.pc-builder{padding:14px}}
+
+
+/* Skill cards */
+.daily-skill{margin:22px 0;background:#fff;border:1px solid var(--line);border-radius:20px;padding:16px;box-shadow:var(--shadow)}
+.daily-skill h2{margin:0 0 5px;font-size:1.35rem}.daily-skill .muted{color:var(--muted);font-size:.9rem;margin:0 0 12px}
+.skillcard{perspective:1000px;min-height:255px;cursor:pointer}.skillcard-inner{position:relative;width:100%;min-height:255px;transition:transform .5s;transform-style:preserve-3d}
+.skillcard.flipped .skillcard-inner{transform:rotateY(180deg)}.skillcard-face{position:absolute;inset:0;backface-visibility:hidden;border-radius:18px;padding:22px;display:flex;flex-direction:column;justify-content:center;border:1px solid var(--line)}
+.skillcard-front{background:#f4f8f7}.skillcard-back{background:#f7f4ee;transform:rotateY(180deg)}.skillcard-cat{text-transform:uppercase;letter-spacing:.07em;font-size:.72rem;font-weight:850;color:var(--accent);margin-bottom:9px}
+.skillcard-name{font-size:1.65rem;font-weight:850;line-height:1.08;margin-bottom:12px}.skillcard-text{line-height:1.45}.skillcard-hint{margin-top:16px;color:var(--muted);font-size:.8rem}
+.card-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.card-btn{border:0;border-radius:12px;padding:10px 13px;font:inherit;font-weight:750;background:var(--accent);color:#fff}.card-btn.secondary{background:#eef2f1;color:var(--ink);border:1px solid var(--line)}
+.deck-browser{display:none;margin-top:14px}.deck-filter{width:100%;font:inherit;padding:11px;border:1px solid var(--line);border-radius:12px;background:#fff}.deck-list{margin-top:10px;max-height:330px;overflow:auto;border-top:1px solid var(--line)}
+.deck-row{width:100%;text-align:left;border:0;border-bottom:1px solid var(--line);background:#fff;padding:11px 5px;font:inherit}.deck-row small{display:block;color:var(--muted);margin-bottom:2px}
+
+
+/* Playing-card treatment for Skill of the Day */
+.skillcard{perspective:1200px;min-height:330px;cursor:pointer;margin:10px 0 4px}
+.skillcard-inner{position:relative;width:100%;min-height:330px;transition:transform .55s;transform-style:preserve-3d}
+.skillcard.flipped .skillcard-inner{transform:rotateY(180deg)}
+.skillcard-face{
+  position:absolute;inset:0;backface-visibility:hidden;border-radius:24px;padding:30px 28px 26px;
+  display:flex;flex-direction:column;justify-content:center;border:2px solid #b9ab95;
+  background:radial-gradient(circle at 20% 15%, rgba(255,255,255,.7), transparent 24%),linear-gradient(135deg,#fffdf8,#f7f0e5);
+  box-shadow:0 14px 28px rgba(58,48,35,.14), inset 0 0 0 4px rgba(255,255,255,.45);overflow:hidden
+}
+.skillcard-face:before,.skillcard-face:after{position:absolute;font-family:Georgia,serif;font-weight:800;font-size:2.1rem;line-height:.9;color:var(--card-suit,#a3382b)}
+.skillcard-face:before{content:attr(data-rank) " " attr(data-suit);top:16px;left:18px}
+.skillcard-face:after{content:attr(data-rank) " " attr(data-suit);bottom:16px;right:18px;transform:rotate(180deg)}
+.skillcard-front{--card-suit:#b4362b}
+.skillcard-back{transform:rotateY(180deg);--card-suit:#8d3d31;background:radial-gradient(circle at 75% 20%, rgba(255,255,255,.7), transparent 24%),linear-gradient(135deg,#fff8f4,#f6e9e0)}
+.skillcard-cat{text-transform:uppercase;letter-spacing:.08em;font-size:.76rem;font-weight:850;color:#b4362b;margin:14px auto 10px;padding-bottom:5px;border-bottom:2px solid #d86254;text-align:center}
+.skillcard-name{font-family:"Bradley Hand","Marker Felt","Segoe Print","Comic Sans MS",cursive;font-size:2.5rem;font-weight:700;line-height:1.05;text-align:center;margin:10px 24px 18px;color:#10233f}
+.skillcard-text{font-family:"Bradley Hand","Marker Felt","Segoe Print","Comic Sans MS",cursive;font-size:1.28rem;line-height:1.48;text-align:center;max-width:92%;margin:0 auto}
+.skillcard-hint{margin-top:18px;color:var(--muted);font-size:.84rem;text-align:center;font-family:"Bradley Hand","Marker Felt","Segoe Print","Comic Sans MS",cursive}
+.skillcard-signature{position:absolute;left:0;right:0;bottom:18px;text-align:center;font-family:"Bradley Hand","Marker Felt","Segoe Print","Comic Sans MS",cursive;font-size:1.05rem;color:#1c2430;transform:rotate(-2deg)}
+.skillcard-signature span{display:inline-block;border-bottom:1px solid rgba(28,36,48,.35);padding:0 4px 1px}
+.deck-row{border-radius:14px!important;margin:7px 0!important;border:1px solid #d8cfbf!important;background:linear-gradient(135deg,#fffdf8,#f7f0e5)!important;box-shadow:0 4px 10px rgba(58,48,35,.06)}
+.deck-row small{font-family:Georgia,serif;text-transform:uppercase;letter-spacing:.04em}
+@media(max-width:560px){.skillcard,.skillcard-inner{min-height:440px}.skillcard-face{padding:28px 20px 34px}.skillcard-name{font-size:2.35rem}.skillcard-text{font-size:1.18rem;line-height:1.5}}
+
 </style>
 
 <link rel="manifest" href="./manifest.webmanifest">
@@ -104,6 +170,7 @@ footer{color:var(--muted);font-size:.84rem;padding:28px 4px 0}
 <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
 <link rel="icon" type="image/png" sizes="512x512" href="./icon-512.png">
 
+<meta name="app-build" content="2026-08-10-clean-3">
 </head>
 <body>
 <div class="wrap">
@@ -123,6 +190,27 @@ footer{color:var(--muted);font-size:.84rem;padding:28px 4px 0}
   <div class="intro-kicker">Save it like an app</div>
   <p><b>iPhone:</b> open this page in Safari, tap Share, then <b>Add to Home Screen</b>. <b>Android:</b> use your browser menu and choose <b>Install app</b> or <b>Add to Home screen</b>. Once loaded, the guide is designed to work offline.</p>
 </div>
+
+
+<section class="daily-skill" id="daily-skill">
+ <div class="tag">Learn & practise</div>
+ <h2>Skill of the Day</h2>
+ <p class="muted">One card each day from the DBT deck. Tap the card to flip it, shuffle for another, or browse the whole deck.</p>
+ <div class="skillcard" id="skillCard" role="button" tabindex="0" aria-label="Flip skill card">
+  <div class="skillcard-inner">
+   <div class="skillcard-face skillcard-front" data-rank="7" data-suit="♥">
+    <div class="skillcard-cat" id="cardCat"></div><div class="skillcard-name" id="cardName"></div>
+    <div class="skillcard-text" id="cardText"></div><div class="skillcard-hint">Tap to flip →</div><div class="skillcard-signature"><span>@sleepprof</span></div>
+   </div>
+   <div class="skillcard-face skillcard-back" data-rank="7" data-suit="♥">
+    <div class="skillcard-cat">Try it today</div><div class="skillcard-name" id="cardBackName"></div>
+    <div class="skillcard-text" id="cardPractice"></div><div class="skillcard-hint">Tap to turn back</div><div class="skillcard-signature"><span>@sleepprof</span></div>
+   </div>
+  </div>
+ </div>
+ <div class="card-actions"><button class="card-btn" id="shuffleSkill" type="button">Shuffle</button><button class="card-btn secondary" id="browseSkills" type="button">Browse deck</button><button class="card-btn secondary" id="practiseSkill" type="button">Practise & track</button></div>
+ <div class="deck-browser" id="deckBrowser"><select class="deck-filter" id="deckFilter"><option>All groups</option><option>Mindfulness</option><option>Distress Tolerance</option><option>Emotion Regulation</option><option>Interpersonal Effectiveness</option></select><div class="deck-list" id="deckList"></div></div>
+</section>
 
 <div class="section-title">A useful order when emotions are high</div>
 <div class="flow">STOP → TIP/TIPP if needed → Check the Facts → Pros & Cons / Wise Mind → interpersonal skill if another person is involved.</div>
@@ -188,7 +276,7 @@ footer{color:var(--muted);font-size:.84rem;padding:28px 4px 0}
 <details class="skill">
 <summary><div class="tag">Emotion regulation</div><div class="name">Check the Facts</div><div class="when">When emotion may be amplified by assumptions or interpretations.</div></summary>
 <div class="body"><p>Separate observable facts from interpretation. Identify the emotion and ask whether its intensity fits the facts and the actual threat.</p>
-<div class="callout">“She spoke to management without telling us” may be a fact. “She wanted to destroy the team” is an interpretation unless there is evidence for motive.</div></div>
+<div class="callout">“They have not replied to my message” may be a fact. “They are deliberately ignoring me” is an interpretation unless there is evidence for motive.</div></div>
 </details>
 
 </div></details>
@@ -318,6 +406,49 @@ footer{color:var(--muted);font-size:.84rem;padding:28px 4px 0}
 </div></details>
 
 
+
+<section class="pc-builder" id="pros-cons-builder">
+  <div class="tag">Decision support</div>
+  <h2>Pros & Cons Builder</h2>
+  <p class="muted">Choose a few words that fit the situation, or type your own. The guide will build a four-box DBT Pros & Cons table. Tap any point that feels particularly important.</p>
+
+  <label>What is the urge or decision about?</label>
+  <div class="pc-keywords" id="pcKeywords"></div>
+  <input type="text" id="pcFreeText" placeholder="Or type a few words, e.g. send angry email, confront someone…">
+
+  <div class="pc-actions">
+    <button class="pc-btn" id="pcBuild" type="button">Build table</button>
+    <button class="pc-btn secondary" id="pcClear" type="button">Clear</button>
+  </div>
+
+  <div class="pc-context" id="pcContext"></div>
+
+  <div class="pc-grid" id="pcGrid" style="display:none">
+    <div class="pc-box act-pro">
+      <h3>Pros of acting on the urge</h3>
+      <div id="actPro"></div>
+      <div class="pc-custom"><input id="addActPro" type="text" placeholder="Add your own…"><button type="button" data-target="actPro" data-input="addActPro">+</button></div>
+    </div>
+    <div class="pc-box act-con">
+      <h3>Cons of acting on the urge</h3>
+      <div id="actCon"></div>
+      <div class="pc-custom"><input id="addActCon" type="text" placeholder="Add your own…"><button type="button" data-target="actCon" data-input="addActCon">+</button></div>
+    </div>
+    <div class="pc-box resist-pro">
+      <h3>Pros of resisting the urge</h3>
+      <div id="resistPro"></div>
+      <div class="pc-custom"><input id="addResistPro" type="text" placeholder="Add your own…"><button type="button" data-target="resistPro" data-input="addResistPro">+</button></div>
+    </div>
+    <div class="pc-box resist-con">
+      <h3>Cons of resisting the urge</h3>
+      <div id="resistCon"></div>
+      <div class="pc-custom"><input id="addResistCon" type="text" placeholder="Add your own…"><button type="button" data-target="resistCon" data-input="addResistCon">+</button></div>
+    </div>
+  </div>
+
+  <div class="pc-summary" id="pcSummary"></div>
+</section>
+
 <section class="tracker" id="skills-tracker">
 <div class="tag">Personal tracker</div><h2>Skills Tracker</h2>
 <p class="muted">Record what was happening, which skill you used, and how you felt immediately before and after.</p>
@@ -365,12 +496,179 @@ footer{color:var(--muted);font-size:.84rem;padding:28px 4px 0}
 
 <script>
 if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker.register("./service-worker.js").catch(() => {});
+  window.addEventListener("load", async () => {
+    try {
+      const reg = await navigator.serviceWorker.register("./service-worker.js?v=20260810-3", { updateViaCache: "none" });
+      await reg.update();
+    } catch (_) {}
   });
 }
 </script>
 
+
+
+<script>
+(function(){
+  const quick = [
+    "angry words","angry email/message","confront someone","avoid a meeting",
+    "walk out/quit","say nothing","set a boundary","urge to self-harm","urge to hit someone","relationship argument"
+  ];
+  let selectedWords = [];
+  const kw = document.getElementById("pcKeywords");
+  const free = document.getElementById("pcFreeText");
+
+  quick.forEach(t => {
+    const b = document.createElement("button");
+    b.type = "button"; b.className = "pc-chip"; b.textContent = t;
+    b.addEventListener("click", () => {
+      b.classList.toggle("selected");
+      selectedWords = b.classList.contains("selected")
+        ? [...selectedWords, t]
+        : selectedWords.filter(x => x !== t);
+    });
+    kw.appendChild(b);
+  });
+
+  const base = {
+    actPro:[
+      "Immediate relief or release",
+      "I may feel I have stood up for myself",
+      "The other person knows how strongly I feel"
+    ],
+    actCon:[
+      "I may act while emotion is driving the decision",
+      "It may escalate the situation",
+      "I may say or do something difficult to undo",
+      "The focus may shift from the original problem to my reaction"
+    ],
+    resistPro:[
+      "I gain time for the emotion to settle",
+      "I can choose a more deliberate response",
+      "I reduce the chance of making the situation worse",
+      "I keep more options open"
+    ],
+    resistCon:[
+      "The emotion may remain uncomfortable for a while",
+      "It may feel as though I am doing nothing",
+      "I may worry that the other person will think the behaviour was acceptable"
+    ]
+  };
+
+  const patterns = [
+    {keys:["email","message","text"], add:{
+      actPro:["I get the message out of my head quickly"],
+      actCon:["Written words can be forwarded or revisited later","Tone may come across more harshly than intended"],
+      resistPro:["I can draft it now and review it later","I can choose a calmer medium for the conversation"],
+      resistCon:["Waiting may feel frustrating"]}},
+    {keys:["confront","angry words","argument"], add:{
+      actPro:["I can say directly what has upset me"],
+      actCon:["The conversation may become adversarial","I may overstate motives or intent"],
+      resistPro:["I can decide what outcome I actually want first","I can use DEAR MAN rather than reacting"],
+      resistCon:["I may feel I have let the moment pass"]}},
+    {keys:["hit someone","violence"], add:{
+      actPro:["The urge may briefly feel discharged"],
+      actCon:["Someone could be injured","There could be serious personal, work or legal consequences","It would make the conflict substantially harder to resolve"],
+      resistPro:["Everyone remains physically safer","I preserve the possibility of resolving the problem another way"],
+      resistCon:["The physical surge of anger may take time to pass"]}},
+    {keys:["self-harm"], add:{
+      actPro:["It may seem as though it would interrupt unbearable emotion"],
+      actCon:["I could be injured and may need medical help","Relief may be brief while the underlying problem remains"],
+      resistPro:["I stay physically safer","I give other distress-tolerance skills time to work","I can seek support while the urge passes"],
+      resistCon:["The distress may remain intense for a while"]}},
+    {keys:["quit","walk out"], add:{
+      actPro:["I immediately leave the stressful situation","It may feel like a clear boundary"],
+      actCon:["The decision may be difficult to reverse","There may be work, financial or relationship consequences I have not considered"],
+      resistPro:["I can decide later when I have more information","I can explore less permanent boundaries first"],
+      resistCon:["I remain exposed to the difficult situation for now"]}},
+    {keys:["avoid","meeting"], add:{
+      actPro:["I avoid an uncomfortable interaction","It creates immediate distance"],
+      actCon:["Avoidance may limit my influence or make work harder","Others may focus on my non-attendance rather than the original issue"],
+      resistPro:["I can remain professionally engaged while changing boundaries","I keep access to information and decisions"],
+      resistCon:["Being in the room may feel uncomfortable or angering"]}},
+    {keys:["say nothing","silent"], add:{
+      actPro:["I avoid immediate conflict","I have time to observe what happens next"],
+      actCon:["Resentment may continue","The other person may not know there is a problem"],
+      resistPro:["I can state a boundary or concern clearly","I may reduce the chance of the problem recurring"],
+      resistCon:["Speaking up may create discomfort or disagreement"]}},
+    {keys:["boundary"], add:{
+      actPro:["I make my limit clear","I protect time, safety or self-respect"],
+      actCon:["If expressed in anger, the boundary may sound punitive rather than clear"],
+      resistPro:["I can formulate a specific, workable boundary before stating it"],
+      resistCon:["Delay may feel as if I am tolerating behaviour I dislike"]}}
+  ];
+
+  const unique = a => [...new Set(a)];
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
+
+  function makeData(text){
+    const d = {
+      actPro:[...base.actPro], actCon:[...base.actCon],
+      resistPro:[...base.resistPro], resistCon:[...base.resistCon]
+    };
+    const lower = text.toLowerCase();
+    patterns.forEach(p => {
+      if (p.keys.some(k => lower.includes(k))) {
+        Object.keys(p.add).forEach(q => d[q].push(...p.add[q]));
+      }
+    });
+    Object.keys(d).forEach(k => d[k] = unique(d[k]).slice(0,8));
+    return d;
+  }
+
+  function updateSummary(){
+    const chosen = [...document.querySelectorAll(".pc-item.selected")].map(x => x.textContent);
+    const s = document.getElementById("pcSummary");
+    if (!chosen.length) { s.style.display="none"; s.innerHTML=""; return; }
+    s.style.display="block";
+    s.innerHTML="<strong>Points you marked as most important</strong>" +
+      chosen.map(x => "• " + esc(x)).join("<br>");
+  }
+
+  function makeItem(txt){
+    const b = document.createElement("button");
+    b.type="button"; b.className="pc-item"; b.textContent=txt;
+    b.addEventListener("click", () => { b.classList.toggle("selected"); updateSummary(); });
+    return b;
+  }
+
+  function renderBox(id, arr){
+    const x = document.getElementById(id);
+    x.innerHTML="";
+    arr.forEach(t => x.appendChild(makeItem(t)));
+  }
+
+  document.getElementById("pcBuild").addEventListener("click", () => {
+    const text=[...selectedWords, free.value.trim()].filter(Boolean).join(" · ");
+    if(!text){ document.getElementById("pcContext").textContent="Choose at least one situation or type a few words."; return; }
+    const d=makeData(text);
+    document.getElementById("pcContext").innerHTML="<b>Situation:</b> "+esc(text);
+    renderBox("actPro",d.actPro); renderBox("actCon",d.actCon);
+    renderBox("resistPro",d.resistPro); renderBox("resistCon",d.resistCon);
+    document.getElementById("pcGrid").style.display="grid";
+    updateSummary();
+  });
+
+  document.getElementById("pcClear").addEventListener("click", () => {
+    selectedWords=[]; free.value="";
+    document.querySelectorAll(".pc-chip").forEach(x=>x.classList.remove("selected"));
+    document.getElementById("pcGrid").style.display="none";
+    document.getElementById("pcContext").textContent="";
+    document.getElementById("pcSummary").style.display="none";
+    document.getElementById("pcSummary").innerHTML="";
+  });
+
+  document.querySelectorAll(".pc-custom button").forEach(b => {
+    b.addEventListener("click", () => {
+      const target = document.getElementById(b.dataset.target);
+      const input = document.getElementById(b.dataset.input);
+      const val = input.value.trim();
+      if(!val) return;
+      target.appendChild(makeItem(val));
+      input.value="";
+    });
+  });
+})();
+</script>
 
 <script>
 (function(){
@@ -387,7 +685,7 @@ const common={
  "STOP":["angry words","angry email/message","urge to self-harm","urge to hit someone","about to walk out"],
  "TIP / TIPP":["panic or overwhelm","very intense anger","urge to self-harm","urge to hit someone","unable to think clearly"],
  "Wise Mind":["important decision","conflict at work","relationship decision","whether to send a message","feeling torn"],
- "Check the Facts":["felt betrayed","assumed bad intent","fear something will happen","felt rejected","angry about what someone did"],
+ "Check the Facts":["felt let down","assumed bad intent","fear something will happen","felt rejected","angry about what someone did"],
  "Pros & Cons":["send an angry email","confront someone now","urge to self-harm","urge to hit someone","quit or walk out"],
  "Opposite Action":["anger","fear or avoidance","shame","sadness and withdrawal","urge to retaliate"],
  "DEAR MAN":["ask for something","say no","set a boundary","address bad behaviour","raise a work problem"],
@@ -466,6 +764,29 @@ render();
 })();
 </script>
 
-<script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(()=>{}));}</script>
+
+<script>
+(function(){
+const deck=[["Distress Tolerance","Engage in Pleasurable Activities","When distress is high, a brief absorbing or enjoyable activity can give your mind a break without pretending the problem has disappeared.","Choose one safe activity you can do for ten minutes and give it your full attention."],["Distress Tolerance","Distract Your Thoughts","Temporarily redirect attention away from painful thoughts or memories by giving your mind a neutral or absorbing task.","Count colours or sounds around you, study something interesting, or deliberately focus on another topic for a few minutes."],["Distress Tolerance","Relax and Soothe Using Scents","Smell can be a quick route to calming. Notice which scents feel comforting or grounding to you.","Choose one pleasant scent such as coffee, flowers, herbs, soap or perfume and attend to it slowly for a minute."],["Distress Tolerance","Relax and Soothe Using Sound","Use sound deliberately to create a calmer environment and give your attention somewhere safe to rest.","Play music, nature sounds, white noise or a familiar voice that you find settling, and listen without multitasking."],["Distress Tolerance","Relax and Soothe Using Touch","Comforting physical sensations can reduce arousal and help you feel more grounded in the present.","Try a warm shower, soft fabric, hand cream, a warm drink held in both hands, or stroking a pet."],["Distress Tolerance","Practise Safe-Place Visualisation","Create a detailed mental picture of a place where you feel safe or calm, whether real or imagined.","For five minutes, picture the place and add what you would see, hear, feel and notice there."],["Distress Tolerance","Rediscover Your Values","Values can give direction when distress makes everything feel urgent. They describe how you want to live, not how you must feel.","Name three values that matter to you and one small action this week that would move towards one of them."],["Distress Tolerance","Take a Time-Out","A short, deliberate break can prevent overload from turning into an impulsive reaction.","Step away briefly if it is safe to do so. Walk, sit somewhere quiet, or pause before returning to the situation."],["Distress Tolerance","Use Your Coping Thoughts","Helpful self-talk can steady you when your mind is predicting disaster or defeat.","Choose one believable coping statement, such as ‘I can get through the next ten minutes’, and repeat it slowly."],["Distress Tolerance","Use Radical Acceptance","Radical acceptance means acknowledging the facts of a situation you cannot change right now, without saying that you approve of them.","Name what is happening in one factual sentence, then ask what healthy response is still available to you."],["Distress Tolerance","Take a REST","REST is a pause before action: Relax, Evaluate, Set an intention, then Take action.","Use REST before responding to a stressful situation. Decide what you want your next action to achieve before you act."],["Distress Tolerance","Rehearse Values-Based Behaviour","When fear or strong emotion gets in the way, mentally rehearse acting in line with your values before the real moment arrives.","Pick one upcoming situation. Decide what you want to say or do, then picture yourself doing it calmly and clearly."],["Distress Tolerance","Assess the Feelings–Threat Balance","Strong feelings can signal danger, but their intensity does not always match the actual threat. Comparing the two can guide the next skill.","Rate emotional intensity and actual threat from zero to ten. If emotion is much higher, regulate first; if threat is real, plan effective action."],["Mindfulness","Focus on a Single Minute","This exercise trains attention to time and bodily experience without relying on constant checking or counting.","Close your eyes and estimate one minute without counting. Then check the time and notice whether your estimate was early or late."],["Mindfulness","Practise Mindfulness on a Single Object","Sustained attention to one ordinary object is a simple way to practise observing without rushing to judgement.","Pick an object and study its shape, surface, colour, weight and texture for five minutes."],["Mindfulness","Practise Band-of-Light Meditation","A moving band of imagined light can help you scan the body slowly and notice sensations without judging them.","Imagine a narrow band of light travelling down your body. Notice each sensation it passes over, then let it move on."],["Mindfulness","Observe Your Inner–Outer Experience","Mindfulness can move between the world outside you and the sensations, thoughts and feelings inside you.","Notice one nearby object, then your body, then each of your five senses. Describe what you notice without judging it."],["Mindfulness","Practise Thought Defusion","Thoughts are mental events, not instructions or facts. Defusion means noticing them without becoming tangled in them.","Watch thoughts come and go for five minutes. Picture them as clouds or leaves moving past rather than arguments you must solve."],["Mindfulness","Use Mindful Breathing","Slow, deliberate breathing gives attention a simple anchor and can reduce physiological arousal.","Breathe gently into the abdomen. Try breathing in for three and out for four, then settle into a comfortable rhythm for five minutes."],["Mindfulness","Use Wise-Mind Meditation","Wise Mind looks for a response that includes both emotional information and reason rather than being ruled by either alone.","Settle your breathing, bring one question to mind, and ask what response fits both the facts and what matters to you."],["Mindfulness","Be Mindful of Negative Judgements","Judgements can arrive automatically. Mindfulness is noticing them as thoughts rather than treating them as the whole truth.","Catch one judgement today, label it ‘a judgement’, and return to a factual description of what is happening."],["Mindfulness","Use Beginner’s Mind","Beginner’s mind means meeting a familiar situation as if you might still have something new to notice.","In one routine interaction today, deliberately look for a detail, possibility or perspective you usually overlook."],["Mindfulness","Make Mindful Statements","Mindful communication describes your own experience without blame, mind-reading or loaded labels.","Replace one blaming ‘you’ statement with an ‘I’ statement that names what you notice, feel or need."],["Mindfulness","Do What’s Effective","Effectiveness means choosing the action most likely to help with your goal, even when another response feels more satisfying in the moment.","Before acting, ask: ‘What am I trying to achieve, and what response is most likely to help?’"],["Mindfulness","Do Tasks Mindfully","Mindfulness in daily life means bringing attention back to the task in front of you rather than running several mental tracks at once.","Choose one ordinary task and do it for five minutes without checking messages, rehearsing arguments or switching activities."],["Mindfulness","Use Self-Compassion Meditation","Self-compassion pairs mindful awareness with a kinder response to your own suffering.","Breathe slowly and repeat a few simple wishes for yourself, such as safety, health and peace, in words that feel believable."],["Emotion Regulation","Recognise Your Emotional Triggers","Looking back at a recent emotional episode can reveal the events, thoughts and urges that reliably set a reaction in motion.","Choose one recent upset. Note what happened, what you felt, what you wanted to do, what you did, and what happened afterwards."],["Emotion Regulation","Say How You Feel","Naming an emotion can make it easier to understand what you need and which skill fits the situation.","Say the feeling plainly, aloud or in writing: ‘I feel angry’, ‘I feel scared’, ‘I feel ashamed’, or whatever is accurate."],["Emotion Regulation","Overcome Barriers to Healthy Emotions","Thoughts, feelings and actions can reinforce one another. Noticing the payoff from an unhelpful pattern can make alternatives easier to choose.","Ask what a current pattern gives you in the short term, then choose one healthier thought or action that could meet the same need."],["Emotion Regulation","Reduce Your Physical Vulnerability","Sleep, food, illness, pain, substances, exercise and stress all affect how easily emotions become overwhelming.","Check the basics today. Choose one physical factor you can realistically improve rather than trying to fix everything at once."],["Emotion Regulation","Get Restful Sleep","Inadequate or irregular sleep can increase emotional reactivity, while regular sleep habits support regulation.","Choose one sleep-supporting change for the next week, such as a steadier wake time, less late caffeine or keeping screens out of bed."],["Emotion Regulation","Observe Yourself Without Judging Yourself","You can notice difficult emotions or habits without turning them into a verdict about your character.","Describe what you are feeling or doing in neutral language. Replace ‘I am bad at this’ with a specific observation you could change."],["Emotion Regulation","Reduce Your Cognitive Vulnerability","Repeated negative thoughts can amplify painful emotions. Generating a more balanced thought can reduce that extra layer of distress.","Write one harsh or absolute thought, then write a more accurate alternative that you could genuinely believe."],["Emotion Regulation","See the Big Picture","When emotion narrows attention, checking evidence for and against your interpretation can reopen other possibilities.","Write what you are thinking, then list evidence that supports it and evidence that does not. Add one plausible alternative view."],["Emotion Regulation","Increase Your Positive Emotions","Positive experiences often need to be planned rather than waited for, especially when mood is low or life is busy.","Schedule one small enjoyable or meaningful activity today and notice how you feel before, during and after it."],["Emotion Regulation","Be Mindful of Your Emotions Without Judgement","Emotions change more naturally when they are observed rather than criticised, suppressed or immediately acted upon.","For five minutes, notice the emotion and its body sensations. Let judgements pass and watch for changes in intensity."],["Emotion Regulation","Use Emotion Exposure","Staying with an emotion safely, without escaping from it or acting on every urge, can show that it rises and falls.","Notice one manageable emotion for five minutes. Describe its intensity and urges, but do not deliberately suppress or act on them."],["Emotion Regulation","Do the Opposite of Your Unhealthy Urges","An emotion can create an urge that is understandable but unhelpful. Choosing the effective opposite can change what happens next.","Name the urge, such as withdraw, attack or avoid. If it is safe and appropriate, choose a small opposite action and observe the result."],["Emotion Regulation","Use Problem Solving","When a problem can be changed, move from rumination to action by generating options, choosing one and committing to a trial.","Use ABC: list Alternatives, choose the Best workable idea, then Commit to when and how you will try it."],["Interpersonal Effectiveness","Observe Body Language","Words are only part of communication. Posture, facial expression, pace and tone can add information about both people in an interaction.","Notice body language in one conversation. Then check your own posture and tone and aim for calm, open and confident."],["Interpersonal Effectiveness","Pay Mindful Attention to Others","Effective listening means attending to both words and non-verbal cues instead of preparing your reply while the other person is speaking.","In one conversation, listen to the end, notice body language, and ask for clarification rather than guessing what the person means."],["Interpersonal Effectiveness","Establish Valued Relationships","Relationships work better when your behaviour reflects your values and your boundaries are clear enough to protect what matters.","Choose one important relationship. Name how you want to behave in it and one boundary or expectation that needs to be clear."],["Interpersonal Effectiveness","Exercise Your Legitimate Rights","Assertiveness begins with recognising that your needs, opinions, feelings and limits are allowed to exist alongside other people’s.","Identify one reasonable right you tend to give up, such as asking for help or saying no, and practise using it respectfully."],["Interpersonal Effectiveness","Be Assertive","Assertiveness is direct and respectful. It differs from aggression because it does not require attacking, threatening or dominating someone else.","Make one clear request or boundary today in a calm voice, without over-apologising or adding unnecessary justification."],["Interpersonal Effectiveness","Know How to Make a Simple Request","A request is easier to answer when the problem and the desired action are both clear and specific.","State the issue briefly, ask for one concrete thing politely, and finish with appreciation rather than a long defence."],["Interpersonal Effectiveness","Practise Making Simple Requests","Making small requests builds confidence for harder conversations and helps you tolerate the possibility of hearing no.","Practise one low-stakes request today, such as asking for information, directions, help finding something or a small favour."],["Interpersonal Effectiveness","Use Assertive Communication Skills","A clear assertive message can separate facts, feelings and the request itself.","Try three parts: ‘I think…’ for the facts, ‘I feel…’ for your emotional response, and ‘I want…’ for the specific change you are asking for."],["Interpersonal Effectiveness","Use Assertive Listening","Assertive communication also requires listening actively rather than simply waiting for your turn to speak.","Stop rehearsing your reply. Listen, show that you have heard, ask questions, and check that you have understood correctly."],["Interpersonal Effectiveness","Learn to Say No","A respectful no does not require a long argument. You can acknowledge the other person’s wish and still decline.","Try: ‘I understand why you’re asking, but I’m not able to do that.’ Keep the wording brief and steady."],["Interpersonal Effectiveness","Use the Broken Record Technique","When a reasonable boundary or request is repeatedly challenged, calm repetition can be more effective than getting pulled into fresh arguments.","Choose one short sentence and repeat it politely as needed. Do not add new reasons each time or escalate your tone."],["Interpersonal Effectiveness","Learn to Negotiate Conflict","Negotiation looks for a workable solution while recognising that both people may have legitimate needs.","Stay calm, summarise both sides, offer alternatives, invite the other person’s ideas, and look for a compromise you can both live with."],["Interpersonal Effectiveness","Use Self-Compassion Meditation","Compassion can be extended to others without requiring agreement or approval, including people with whom you have difficulty.","Begin with someone easy to care about, wish them safety and peace, then try extending a similar wish to someone more difficult while keeping your boundaries."]];
+let current=0;
+const card=document.getElementById("skillCard");
+function dayIndex(){const n=new Date();const key=n.getFullYear()*10000+(n.getMonth()+1)*100+n.getDate();return key%deck.length}
+function show(i){current=(i+deck.length)%deck.length;const c=deck[current];document.getElementById("cardCat").textContent=c[0];document.getElementById("cardName").textContent=c[1];document.getElementById("cardText").textContent=c[2];document.getElementById("cardBackName").textContent=c[1];document.getElementById("cardPractice").textContent=c[3];
+const faces=card.querySelectorAll(".skillcard-face");
+const suitMap={"Mindfulness":["A","♠"],"Distress Tolerance":["8","♦"],"Emotion Regulation":["7","♥"],"Interpersonal Effectiveness":["Q","♣"]};
+const rs=suitMap[c[0]]||["7","♥"];
+faces.forEach(f=>{f.setAttribute("data-rank",rs[0]);f.setAttribute("data-suit",rs[1]);});
+card.classList.remove("flipped")}
+function flip(){card.classList.toggle("flipped")}
+card.addEventListener("click",flip);card.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();flip()}});
+document.getElementById("shuffleSkill").onclick=()=>{let i=current;while(i===current&&deck.length>1)i=Math.floor(Math.random()*deck.length);show(i)};
+document.getElementById("browseSkills").onclick=()=>{const b=document.getElementById("deckBrowser");b.style.display=b.style.display==="block"?"none":"block";renderList()};
+document.getElementById("deckFilter").onchange=renderList;
+function renderList(){const f=document.getElementById("deckFilter").value,l=document.getElementById("deckList");l.innerHTML="";deck.forEach((c,i)=>{if(f!=="All groups"&&c[0]!==f)return;const b=document.createElement("button");b.type="button";b.className="deck-row";b.innerHTML="<small>"+c[0]+"</small>"+c[1];b.onclick=()=>{show(i);document.getElementById("deckBrowser").style.display="none";card.scrollIntoView({behavior:"smooth",block:"center"})};l.appendChild(b)})}
+document.getElementById("practiseSkill").onclick=()=>{const c=deck[current],sel=document.getElementById("skillSelect");if(sel){let opt=[...sel.options].find(o=>o.textContent===c[1]);if(opt)sel.value=opt.value;document.getElementById("skills-tracker").scrollIntoView({behavior:"smooth",block:"start"})}};
+show(dayIndex());
+})();
+</script>
+
 </body>
 </html>
