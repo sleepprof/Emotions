@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#355c63">
+<title>Emotional Regulation Pocket Guide | Paul Gringras</title>
+<meta name="description" content="A practical, phone-friendly reminder of commonly used DBT skills and acronyms.">
+<meta name="author" content="Paul Gringras">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Emotion Guide">
+<style>
+:root{
+  --bg:#f6f3ee; --card:#fff; --ink:#17202a; --muted:#66717c;
+  --line:#d9ddd8; --accent:#355c63; --accent2:#e7efed; --warn:#fff3d9;
+  --shadow:0 6px 22px rgba(28,38,45,.07);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.45}
+.wrap{max-width:760px;margin:auto;padding:18px 14px 60px}
+header{padding:18px 18px 20px;border-radius:22px;background:linear-gradient(135deg,#e9f0ed,#f7efe8);border:1px solid #e2e3de;box-shadow:var(--shadow);margin-bottom:18px}
+h1{font-size:1.9rem;margin:.15rem 0 .35rem;letter-spacing:-.03em}
+.sub{color:var(--muted);margin:0}
+.section-title{font-size:1.04rem;margin:24px 3px 10px;color:#34444a}
+.flow{background:linear-gradient(90deg,#ffffff,#f3f6f5);border:1px solid var(--line);border-radius:16px;padding:15px 16px;margin:10px 0;font-weight:650;box-shadow:var(--shadow)}
+.tile,.skill{background:var(--card);border:1px solid var(--line);border-radius:18px;margin:10px 0;overflow:hidden;box-shadow:var(--shadow)}
+.tile{border-left:7px solid var(--section,#8aa6a0)}
+.tile>summary{background:linear-gradient(90deg,var(--section-bg,#eef4f2),#ffffff 70%)}
+.tile>summary::after{color:var(--section,#355c63)}
+.tile .skill{box-shadow:none;border-left:4px solid color-mix(in srgb,var(--section,#355c63) 60%, white)}
+.tile .skill .tag{color:var(--section,#355c63)}
+.tile .skill summary::after{color:var(--section,#355c63)}
+.tile .letter b{color:var(--section,#355c63)}
+.tile .callout{background:var(--section-bg,#e7efed)}
+.tile.crisis{--section:#3b7d78;--section-bg:#e6f3f1}
+.tile.urge{--section:#b86f3c;--section-bg:#faeee5}
+.tile.decision{--section:#6b63a8;--section-bg:#efedf8}
+.tile.objective{--section:#3e6fa8;--section-bg:#eaf1f8}
+.tile.relationship{--section:#5a8d5b;--section-bg:#edf5ed}
+.tile.respect{--section:#a65368;--section-bg:#f8eaee}
+.tile.endure{--section:#8d6b3f;--section-bg:#f5efe7}
+.tile.accept{--section:#7a6a95;--section-bg:#f1edf6}
+.tile.regulate{--section:#428293;--section-bg:#e8f3f6}
+.tile.mindful{--section:#566b72;--section-bg:#edf1f2}
+summary{cursor:pointer;padding:16px 50px 16px 16px;position:relative;list-style:none;-webkit-tap-highlight-color:transparent}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"＋";position:absolute;right:17px;top:14px;font-size:1.35rem;color:var(--accent)}
+details[open]>summary::after{content:"−"}
+.tile>summary{font-size:1.03rem;font-weight:720}
+.tile>summary small{display:block;color:var(--muted);font-size:.9rem;font-weight:500;margin-top:4px}
+.inner{padding:0 10px 10px}
+.skill{border-radius:14px;margin:8px 0;background:#fbfcfb}
+.skill summary{padding:13px 46px 13px 14px}
+.tag{font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);font-weight:700}
+.name{font-size:1.15rem;font-weight:760;margin-top:2px}
+.when{font-size:.88rem;color:var(--muted);margin-top:3px}
+.body{padding:0 14px 14px;border-top:1px solid #edf0ed}
+.body p{margin:11px 0}
+.letters{display:grid;gap:8px;margin:12px 0}
+.letter{padding:10px 12px;background:#f2f5f4;border-radius:11px}
+.letter b{color:var(--accent)}
+.callout{background:var(--accent2);padding:11px 12px;border-radius:11px;margin:12px 0}
+.warn{background:var(--warn);padding:11px 12px;border-radius:11px;margin:12px 0}
+.intro-note{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px 16px;margin:12px 0 20px;box-shadow:var(--shadow)}
+.intro-note p{margin:4px 0 0}
+.intro-kicker{font-size:.74rem;text-transform:uppercase;letter-spacing:.05em;color:var(--accent);font-weight:800}
+footer{color:var(--muted);font-size:.84rem;padding:28px 4px 0}
+.credit{margin-top:18px;padding:17px 18px;border-radius:18px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);color:var(--ink)}
+.credit .built{font-weight:750;font-size:.95rem}
+.credit .thanks{margin-top:6px;color:var(--muted)}
+.credit .handle{color:var(--accent);font-weight:700}
+</style>
+
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="apple-touch-icon" href="./icons/icon-192.png">
+<link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="./icons/icon-512.png">
+
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="tag">Emotional regulation pocket guide</div>
+  <h1>What do I need right now?</h1>
+  <p class="sub">A quick, practical guide to choosing and remembering common DBT skills for emotional regulation. Tap the situation that best fits what is happening, then open a skill for a concise reminder.</p>
+</header>
+
+<div class="intro-note">
+  <div class="intro-kicker">How to use it</div>
+  <p>You do not need to work through every skill. Start with the problem in front of you. If emotion is too intense to think clearly, regulate first. If another person is involved, decide whether your priority is the <b>objective</b>, the <b>relationship</b> or your <b>self-respect</b>.</p>
+</div>
+
+
+<div class="intro-note">
+  <div class="intro-kicker">Save it like an app</div>
+  <p><b>iPhone:</b> open this page in Safari, tap Share, then <b>Add to Home Screen</b>. <b>Android:</b> use your browser menu and choose <b>Install app</b> or <b>Add to Home screen</b>. Once loaded, the guide is designed to work offline.</p>
+</div>
+
+<div class="section-title">A useful order when emotions are high</div>
+<div class="flow">STOP → TIP/TIPP if needed → Check the Facts → Pros & Cons / Wise Mind → interpersonal skill if another person is involved.</div>
+
+<details class="tile crisis">
+<summary>My emotion is overwhelming<small>STOP, TIP/TIPP</small></summary>
+<div class="inner">
+
+<details class="skill">
+<summary><div class="tag">Distress tolerance</div><div class="name">STOP</div><div class="when">Before acting impulsively when emotion is high.</div></summary>
+<div class="body"><div class="letters">
+<div class="letter"><b>S – Stop.</b> Do not immediately act on the urge.</div>
+<div class="letter"><b>T – Take a step back.</b> Create some space.</div>
+<div class="letter"><b>O – Observe.</b> Notice thoughts, feelings, body sensations, urges and facts.</div>
+<div class="letter"><b>P – Proceed mindfully.</b> Choose what is effective rather than what merely relieves the emotion now.</div>
+</div><div class="callout">Work example: draft the angry email, but do not send it yet.</div></div>
+</details>
+
+<details class="skill">
+<summary><div class="tag">Distress tolerance</div><div class="name">TIP / TIPP</div><div class="when">When arousal is so high that clear thinking is difficult.</div></summary>
+<div class="body"><div class="letters">
+<div class="letter"><b>T – Temperature.</b> Cool the face safely with cold water or a cold pack.</div>
+<div class="letter"><b>I – Intense exercise.</b> Brief vigorous movement, where medically appropriate.</div>
+<div class="letter"><b>P – Paced breathing.</b> Slow breathing, often with a longer out-breath.</div>
+<div class="letter"><b>P – Paired/progressive muscle relaxation.</b> Tense and release muscle groups with the breath.</div>
+</div><div class="warn">Cold exposure and intense exercise are not appropriate for everyone. Adapt for relevant medical conditions.</div></div>
+</details>
+
+</div></details>
+
+<details class="tile urge">
+<summary>I have a strong urge to act<small>Pros & Cons, Opposite Action</small></summary>
+<div class="inner">
+
+<details class="skill">
+<summary><div class="tag">Distress tolerance</div><div class="name">Pros & Cons</div><div class="when">When deciding whether to act on a strong urge.</div></summary>
+<div class="body"><div class="letters">
+<div class="letter"><b>Pros of acting on the urge</b> – including immediate relief.</div>
+<div class="letter"><b>Cons of acting on the urge</b> – including later consequences.</div>
+<div class="letter"><b>Pros of resisting the urge</b> – what becomes possible if you wait or choose differently.</div>
+<div class="letter"><b>Cons of resisting the urge</b> – including discomfort or a sense of injustice.</div>
+</div><p>Consider consequences now, later today, tomorrow and in the longer term.</p></div>
+</details>
+
+<details class="skill">
+<summary><div class="tag">Emotion regulation</div><div class="name">Opposite Action</div><div class="when">When acting on the emotion's urge would be ineffective.</div></summary>
+<div class="body"><p>Identify the emotion's action urge, then deliberately do the effective opposite.</p>
+<div class="callout">For excessive anger, that may mean lowering your voice, unclenching, approaching calmly and trying to understand, while still keeping legitimate boundaries.</div></div>
+</details>
+
+</div></details>
+
+<details class="tile decision">
+<summary>I need to make a decision<small>Wise Mind, Check the Facts</small></summary>
+<div class="inner">
+
+<details class="skill">
+<summary><div class="tag">Mindfulness & decisions</div><div class="name">Wise Mind</div><div class="when">When emotion and logic pull in different directions.</div></summary>
+<div class="body"><p><b>Emotion Mind</b> is dominated by feeling and urges. <b>Reasonable Mind</b> is dominated by facts and logic. <b>Wise Mind</b> integrates both.</p>
+<div class="callout">Ask: What are the facts? What is my emotion telling me? What matters to me? What action is most effective in the longer term?</div></div>
+</details>
+
+<details class="skill">
+<summary><div class="tag">Emotion regulation</div><div class="name">Check the Facts</div><div class="when">When emotion may be amplified by assumptions or interpretations.</div></summary>
+<div class="body"><p>Separate observable facts from interpretation. Identify the emotion and ask whether its intensity fits the facts and the actual threat.</p>
+<div class="callout">“She spoke to management without telling us” may be a fact. “She wanted to destroy the team” is an interpretation unless there is evidence for motive.</div></div>
+</details>
+
+</div></details>
+
+<details class="tile objective">
+<summary>I need to ask, say no or address conflict<small>DEAR MAN</small></summary>
+<div class="inner">
+<details class="skill">
+<summary><div class="tag">Interpersonal effectiveness – objective</div><div class="name">DEAR MAN</div><div class="when">For requests, boundaries, saying no and addressing problems.</div></summary>
+<div class="body"><div class="letters">
+<div class="letter"><b>D – Describe.</b> State the relevant facts without judgement.</div>
+<div class="letter"><b>E – Express.</b> Say how the situation affects you.</div>
+<div class="letter"><b>A – Assert.</b> Clearly ask for what you want or say no.</div>
+<div class="letter"><b>R – Reinforce.</b> Explain the benefit of the requested change.</div>
+<div class="letter"><b>M – Mindful.</b> Stay on the point.</div>
+<div class="letter"><b>A – Appear confident.</b> Calm voice and clear wording.</div>
+<div class="letter"><b>N – Negotiate.</b> Consider workable alternatives.</div>
+</div><div class="callout">First ask: “What concrete outcome do I want from this conversation?”</div></div>
+</details>
+</div></details>
+
+<details class="tile relationship">
+<summary>I want to protect the relationship<small>GIVE</small></summary>
+<div class="inner">
+<details class="skill">
+<summary><div class="tag">Interpersonal effectiveness – relationship</div><div class="name">GIVE</div></summary>
+<div class="body"><div class="letters">
+<div class="letter"><b>G – Gentle.</b> Avoid attacks, threats and contempt.</div>
+<div class="letter"><b>I – Interested.</b> Listen.</div>
+<div class="letter"><b>V – Validate.</b> Acknowledge what is understandable without pretending to agree.</div>
+<div class="letter"><b>E – Easy manner.</b> Keep the interaction as calm as circumstances allow.</div>
+</div><div class="callout">GIVE does not mean trusting, liking or agreeing with someone.</div></div>
+</details>
+</div></details>
+
+<details class="tile respect">
+<summary>I want to protect my self-respect<small>FAST</small></summary>
+<div class="inner">
+<details class="skill">
+<summary><div class="tag">Interpersonal effectiveness – self-respect</div><div class="name">FAST</div></summary>
+<div class="body"><div class="letters">
+<div class="letter"><b>F – Fair.</b> Be fair to yourself and the other person.</div>
+<div class="letter"><b>A – no unnecessary Apologies.</b></div>
+<div class="letter"><b>S – Stick to your values.</b></div>
+<div class="letter"><b>T – Truthful.</b> Do not exaggerate or invent motives.</div>
+</div><div class="callout">Ask: “When I look back on this in six months, how would I want to have behaved?”</div></div>
+</details>
+</div></details>
+
+<details class="tile endure">
+<summary>I cannot change this right now<small>ACCEPTS, IMPROVE, Self-Soothe</small></summary>
+<div class="inner">
+
+<details class="skill">
+<summary><div class="tag">Distress tolerance</div><div class="name">ACCEPTS</div></summary>
+<div class="body"><div class="letters">
+<div class="letter"><b>A – Activities</b></div><div class="letter"><b>C – Contributing</b></div><div class="letter"><b>C – Comparisons</b></div>
+<div class="letter"><b>E – Emotions</b></div><div class="letter"><b>P – Pushing away</b></div><div class="letter"><b>T – Thoughts</b></div><div class="letter"><b>S – Sensations</b></div>
+</div><p>Short-term distress tolerance, not permanent avoidance.</p></div>
+</details>
+
+<details class="skill">
+<summary><div class="tag">Distress tolerance</div><div class="name">IMPROVE</div></summary>
+<div class="body"><div class="letters">
+<div class="letter"><b>I – Imagery</b></div><div class="letter"><b>M – Meaning</b></div><div class="letter"><b>P – Prayer</b>, if this fits your beliefs</div>
+<div class="letter"><b>R – Relaxation</b></div><div class="letter"><b>O – One thing in the moment</b></div><div class="letter"><b>V – Vacation</b>, a brief deliberate break</div><div class="letter"><b>E – Encouragement</b></div>
+</div></div>
+</details>
+
+<details class="skill">
+<summary><div class="tag">Distress tolerance</div><div class="name">Self-Soothe</div></summary>
+<div class="body"><p>Use sight, sound, smell, taste and touch deliberately to lower arousal without denying the underlying problem.</p></div>
+</details>
+
+</div></details>
+
+<details class="tile accept">
+<summary>I am fighting reality<small>Radical Acceptance, Turning the Mind</small></summary>
+<div class="inner">
+<details class="skill">
+<summary><div class="tag">Reality acceptance</div><div class="name">Radical Acceptance</div></summary>
+<div class="body"><p>Acceptance means acknowledging reality as it is, not approving of it. You can accept that something happened and still decide it was wrong or that action is needed.</p>
+<div class="callout"><b>Turning the Mind:</b> notice that you have gone back to fighting reality and choose acceptance again.</div></div>
+</details>
+</div></details>
+
+<details class="tile regulate">
+<summary>I want to reduce emotional vulnerability<small>ABC PLEASE</small></summary>
+<div class="inner">
+<details class="skill">
+<summary><div class="tag">Emotion regulation</div><div class="name">ABC PLEASE</div></summary>
+<div class="body"><div class="letters">
+<div class="letter"><b>A – Accumulate positive experiences</b></div>
+<div class="letter"><b>B – Build mastery</b></div>
+<div class="letter"><b>C – Cope ahead</b></div>
+<div class="letter"><b>P/L – Treat PhysicaL illness</b></div>
+<div class="letter"><b>E – Balance Eating</b></div>
+<div class="letter"><b>A – Avoid mood-Altering substances</b></div>
+<div class="letter"><b>S – Balance Sleep</b></div>
+<div class="letter"><b>E – Get Exercise</b></div>
+</div></div>
+</details>
+</div></details>
+
+<details class="tile mindful">
+<summary>My mind is racing or judging<small>WHAT, HOW</small></summary>
+<div class="inner">
+
+<details class="skill">
+<summary><div class="tag">Mindfulness</div><div class="name">WHAT skills</div></summary>
+<div class="body"><div class="letters">
+<div class="letter"><b>Observe.</b> Notice what is happening.</div>
+<div class="letter"><b>Describe.</b> Put what you notice into factual words.</div>
+<div class="letter"><b>Participate.</b> Enter fully into the present activity.</div>
+</div></div>
+</details>
+
+<details class="skill">
+<summary><div class="tag">Mindfulness</div><div class="name">HOW skills</div></summary>
+<div class="body"><div class="letters">
+<div class="letter"><b>Non-judgementally.</b></div>
+<div class="letter"><b>One-mindfully.</b></div>
+<div class="letter"><b>Effectively.</b> Focus on what works rather than on being right.</div>
+</div></div>
+</details>
+
+</div></details>
+
+<footer>
+<p>This pocket guide is intended as a concise reminder of commonly taught DBT skills. It is not a substitute for DBT skills training, therapy or individual clinical advice. Terminology and the way some acronyms are taught vary slightly between programmes.</p>
+
+<div class="credit">
+  <div class="built">Built by Paul Gringras <span class="handle">@sleepprof</span></div>
+  <div class="thanks">With eternal thanks to Vic Patel and Shruti Guruswamy.</div>
+</div>
+</footer>
+</div>
+
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./service-worker.js").catch(() => {});
+  });
+}
+</script>
+
+</body>
+</html>
